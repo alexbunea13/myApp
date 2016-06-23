@@ -1,4 +1,4 @@
-﻿var StatusEnum = Object.freeze({ "New": 1, "In Progress": 2, "ReadyForTesting": 3, "Feedback": 4, "Reworked": 5, "Resolved": 6 })
+var StatusEnum = Object.freeze({ "New": 1, "In Progress": 2, "ReadyForTesting": 3, "Feedback": 4, "Reworked": 5, "Resolved": 6 })
 
 function getCurrentTime (){
     var date = new Date();
@@ -206,15 +206,15 @@ var myApp = {
         //  this.createSprint("Sprint3");
        var firstSprintID = this.sprints[0].ID;
        var secondSprintID = this.sprints[1].ID;
-        featureNou = new Feature("Feature1", firstSprintID, "intern1", "creator", "trebuie implementat urgent", [], null);
-        bugulMeu = new Bug("Bug1",firstSprintID, "intern1", "creator", "Trebuie rezolvat", [], null);
+        myFeature = new Feature("Feature1", firstSprintID, "intern1", "creator", "trebuie implementat urgent", [], null);
+        myBug = new Bug("Bug1",firstSprintID, "intern1", "creator", "Trebuie rezolvat", [], null);
         //moveTask(featureulMeu.ID, firstSprintID);
-        this.tasks.push(featureNou);
-        this.tasks.push(bugulMeu);
+        this.tasks.push(myFeature);
+        this.tasks.push(myBug);
         this.overview();
-        bugulMeu = this.changeStatusToReady(bugulMeu.ID);
+        myBug = this.changeStatusToReady(myBug.ID);
         this.filterByStatus(StatusEnum.New);
-        this.moveTask(bugulMeu.ID, secondSprintID);
+        this.moveTask(myBug.ID, secondSprintID);
 
 
 
